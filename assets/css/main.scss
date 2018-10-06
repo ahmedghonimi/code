@@ -1,0 +1,746 @@
+$main-color: #a12226;
+$secondary-color: #ffffff;
+$main-font: 'gesstwolight';
+$primary-font: 'cairo-regular';
+$main-font-size: 16px;
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: $main-font;
+  src: url('../fonts/gesstwolight.otf');
+}
+
+@font-face {
+  font-family: $primary-font;
+  src: url('../fonts/cairo-regular.ttf');
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  direction: rtl;
+  font-family: $main-font, sans-serif;
+  overflow-x: hidden;
+}
+  header {
+    min-height: 580px;
+    background-size: cover;
+    background-image: url("../imgs/banner.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    .socials {
+      height: 40px;
+      padding: 15px;
+      svg {
+        cursor: pointer;
+        margin-right: 12px;
+        margin-left: 12px;
+        transition: all 0.5s ease-in-out;
+        .top-menu-icon {
+          fill: #a0a0a0;
+          fill-rule: evenodd;
+          transition: all 0.5s ease-in-out;
+        }
+        &:hover {
+          .top-menu-icon {
+            fill: $main-color;
+          }
+        }
+      }
+      span {
+        font-weight: bold;
+        color: #a0a0a0;
+        margin-right: 23px;
+        font-size: $main-font-size + 2;
+        font-family: $main-font, sans-serif;
+      }
+    }
+    .navbar {
+      background-color: transparent;
+      padding: 0.5rem 0;
+      .navbar-brand {
+        margin-right: 0;
+      }
+      .navbar-nav {
+        border-top: 1px solid #685e5a;
+        border-bottom: 1px solid #685e5a;
+        min-height: 50px;
+        padding: 10px;
+        .nav-link {
+          color: $secondary-color;
+          text-align: right;
+          font-size: $main-font-size - 1;
+          transition: all 0.5s ease-in-out;
+          &:hover {
+            color: $main-color;
+          }
+          &:focus {
+            color: $main-color;
+          }
+        }
+      }
+    }
+    .item-container {
+      min-height: 350px;
+      margin-top: 60px;
+      .carousel-indicators {
+        bottom: -70px;
+        right: -25px;
+        li {
+          border-radius: 50%;
+          width: 10px;
+          height: 10px;
+          margin-right: 7px;
+          margin-left: 7px;
+          cursor: pointer;
+          &.active::before {
+            top: -4px;
+            left: -4px;
+            width: 18px;
+            height: 18px;
+            border: 1px solid $secondary-color;
+            border-radius: 50%
+          }
+        }
+      }
+      .item-data {
+        padding-top: 20px;
+        h3{
+          color: $secondary-color;
+          font-size: 30px;
+          margin-bottom: 15px;
+          width: 80%;
+          line-height: 1.6
+        }
+        p.lead {
+          color: $secondary-color;
+          font-size: $main-font-size;
+          line-height: 1.7;
+          margin-bottom: 20px;
+        }
+        .btn {
+          font-size: $main-font-size;
+          border-radius: 50px;
+          background-color: $main-color;
+          border-color: $main-color;
+          min-width: 25%;
+        }
+      }
+      img {
+        background-color: rgba(222, 226, 230, 0.4);
+        border-radius: 10px;
+        border: none;
+        padding: 5px;
+      }
+    }
+  }
+
+/* Start Services Section styling */
+  .services {
+    padding-top: 20px;
+    .heading {
+      h5 {
+        font-weight: 600;
+        font-size: $main-font-size + 7;
+      }
+      hr {
+        border: none;
+        height: 2px;
+        background-color: #bfbfbf;
+        border-radius: 5px
+      }
+      .btn-outline-danger {
+        border-width: 3px;
+        border-radius: 25px;
+        border-color: $main-color;
+        color: $main-color;
+        &:hover {
+          color: $secondary-color;
+          background-color: $main-color;
+        }
+      }
+    }
+    .nav-tabs {
+      justify-content: center;
+      margin-left: 50px;
+      margin-right: 50px;
+      border: 0;
+      .nav-item {
+        flex: 1;
+        margin-bottom: -2px;
+        a {
+          color: #848484;
+          font-weight: 600;
+          height: 100%;
+          padding-top: 25px;
+          padding-bottom: 10px;
+          &.active {
+            background-color: #f5f5f5;
+            color: $main-color;
+            font-size: $main-font-size + 4;
+            border: 2px solid rgba(132, 132, 132, 0.5);
+            border-bottom: 0 solid transparent;
+            border-radius: 10px 10px 0 0;
+          }
+          svg {
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            background-color: #848484;
+            padding: 15px;
+            transition: all 0.5s ease;
+            box-shadow: 0 0 0 6px rgba(132, 132, 132, 0.4);
+            margin-bottom: 5px;
+            .services-tabs-icon {
+              fill: $secondary-color;
+              fill-rule: evenodd;
+            }
+          }
+          &.active svg {
+            width: 95px;
+            height: 95px;
+            background-color: $main-color;
+            box-shadow: 0 0 0 6px rgba(161, 34, 38, 0.5),
+            0 0 0 15px rgba(161, 34, 38, 0.25);
+          }
+        }
+        &.show a {
+          background-color: #f5f5f5;
+        }
+      }
+    }
+    .tab-content {
+      background-color: #f5f5f5;
+      border-top: 2px solid rgba(132, 132, 132, 0.4);
+      min-height: 450px;
+      .fade:not(.show) {
+        display: none;
+      }
+      .individual-services {
+        .single-service {
+          border: 2px solid rgba(132, 132, 132, 0.4);
+          border-radius: 10px;
+          overflow: hidden;
+          margin-bottom: 15px;
+          transition: all 0.5s linear;
+          h5 {
+            font-size: $main-font-size + 2;
+            padding: 0px 15px;
+            font-weight: 600;
+            line-height: 1.7;
+            word-spacing: 5px
+          }
+          p {
+            font-size: $main-font-size - 2;
+            padding: 8px 15px;
+            color: #231f20;
+            line-height: 1.7
+          }
+          .move {
+            background-color: #e7e7e7;
+            display: flex;
+            height: 70px;
+            justify-content: center;
+            align-items: center;
+            padding: 8px 16px;
+            .icons {
+              flex: 1;
+              a{
+                &hover {
+                  text-decoration: none;
+                }
+                svg {
+                  margin-left: 5px;
+                  margin-right: 5px;
+                  .individual-services-icons {
+                    fill: #a12226;
+                    fill-rule: evenodd;
+                  }
+                }
+              }
+            }
+            a.serv-gain {
+              font-size: 14px;
+              flex: 1;
+              text-decoration: none;
+              color: #a12226;
+              &:hover {
+                text-decoration: none;
+                border-bottom: 1px solid #FFFFFF;
+                color: #FFFFFF;
+              }
+            }
+          }
+          &:hover {
+            border-color: #a12226;
+            h5{
+              color: #a12226;
+            }
+            .move {
+              background-color: #a12226;
+            }
+            .move .icons a svg .individual-services-icons {
+              fill: $secondary-color;
+            }
+           a.serv-gain {
+              color: $secondary-color;
+            }
+          }
+        }
+        #pagination-container {
+          display: flex;
+          justify-content: center;
+          text-align: right;
+          direction: ltr;
+          li {
+            float: right;
+            border-radius: 0;
+            &>a {
+              min-width: 40px;
+              height: 38px;
+              line-height: 38px;
+              display: block;
+              background: $secondary-color;
+              font-size: $main-font-size;
+              color: #a12226;
+              font-weight: bold;
+              transition: all 0.5s ease-in-out;
+              &:hover {
+                background-color: #a12226;
+                color: $secondary-color;
+              }
+            }
+            &.active {
+              a {
+                height: 40px;
+                line-height: 40px;
+                background: #a12226;
+                color: $secondary-color;
+              }
+            }
+          }
+          .paginationjs-prev {
+            transform: rotate(180deg);
+            border-right: 1px solid #eee;
+          }
+
+          .paginationjs-next {
+            transform: rotate(-180deg);
+          }
+        }
+      }
+    }
+  }
+/* End Services Section styling */
+
+/* Start Footer Section styling */
+footer {
+    align-items: center;
+    color: $secondary-color;
+    font-family: $primary-font, sans-serif;
+    height: 85px;
+    background-color: #a12226;
+    display: flex;
+    justify-items: center;
+    text-align: right;
+    padding-top: 12px;
+    .copyright {
+      p {
+        font-size: 14px;
+      }
+    }
+    .important-links {
+      li {
+        display: inline-block;
+        font-size: $main-font-size - 2;
+        margin-left: 20px;
+        text-align: right;
+
+      }
+      a {
+        color: $secondary-color;
+        font-size: $main-font-size;
+      }
+    }
+    .social-media {
+      a {
+        &:hover {
+          text-decoration: none;
+        }
+        svg {
+          margin-right: 15px;
+          margin-left: 15px;
+          .social-icons {
+            fill: $secondary-color;
+          }
+        }
+      }
+    }
+  }
+/* End Footer Section Styling */
+
+
+/* Start Media Queries */
+
+/* Media Query For Extra Small Devices */
+@media only screen and (max-width: 480px) {
+  .hidden-xs {
+    display: none;
+  }
+
+  header {
+    min-height: 540px;
+    .socials {
+      display: flex;
+      justify-content: center;
+    }
+    .item-container {
+      .item-data {
+        display: none;
+      }
+    }
+
+  }
+
+
+  .services {
+    .heading {
+      padding-bottom: 15px;
+      border-bottom: 2px solid #dddddd;
+      h5 {
+        margin-top: 10px;
+      }
+    }
+    .nav-tabs {
+      display: block;
+      margin-left: 20px;
+      margin-right: 20px;
+      .nav-item {
+        margin-bottom: 0;
+        a {
+          padding-top: 5px;
+          padding-bottom: 5px;
+          &.active {
+            border: 2px solid rgba(132, 132, 132, 0.5);
+            border-radius: 8px;
+          }
+        }
+      }
+    }
+    .tab-content {
+      .individual-services {
+        .single-service {
+          border-radius: 8px;
+          h5 {
+            font-size: $main-font-size + 1;
+            line-height: 1.6;
+            word-spacing: 4px
+          }
+          p {
+            font-size: $main-font-size - 3;
+            padding: 5px 15px;
+            line-height: 1.6
+          }
+          .move {
+            padding: 5px 16px;
+            a.serv-gain {
+              font-size: 16px;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    min-height: 120px;
+    padding: 10px;
+    display: block;
+    text-align: center;
+    .important-links {
+      text-align: center;
+      li {
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+      a {
+        color: $secondary-color;
+        font-size: $main-font-size;
+      }
+    }
+    .social-media {
+      a {
+        &:hover {
+          text-decoration: none;
+        }
+        svg {
+          margin-right: 10px;
+          margin-left: 10px;
+          .social-icons {
+            fill: $secondary-color;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  header {
+    min-height: 580px;
+    .socials {
+      display: flex;
+      justify-content: center;
+    }
+    .item-container {
+      margin-top: 30px;
+      .item-data {
+        display: none;
+      }
+    }
+  }
+
+  .hidden-xs {
+    display: none;
+  }
+
+  .services {
+    .heading {
+      padding-bottom: 15px;
+      border-bottom: 2px solid #dddddd;
+      h5 {
+        margin-top: 10px;
+      }
+    }
+    .nav-tabs {
+      display: block;
+      margin-left: 20px;
+      margin-right: 20px;
+      .nav-item {
+        margin-bottom: 0;
+        a {
+          padding-top: 5px;
+          padding-bottom: 5px;
+          &.active {
+            border: 2px solid rgba(132, 132, 132, 0.5);
+            border-radius: 8px;
+          }
+        }
+      }
+    }
+    .tab-content {
+      .individual-services {
+        .single-service {
+          border-radius: 8px;
+          h5 {
+            font-size: $main-font-size + 1;
+            line-height: 1.6;
+            word-spacing: 4px
+          }
+          p {
+            font-size: $main-font-size - 3;
+            padding: 5px 15px;
+            line-height: 1.6
+          }
+          .move {
+            padding: 5px 16px;
+            a.serv-gain {
+              font-size: 16px;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    min-height: 120px;
+    padding: 10px;
+    display: block;
+    text-align: center;
+    .important-links {
+      text-align: center;
+      li {
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+      a {
+        color: $secondary-color;
+        font-size: $main-font-size;
+      }
+    }
+    .social-media {
+      a {
+        &:hover {
+          text-decoration: none;
+        }
+        svg {
+          margin-right: 10px;
+          margin-left: 10px;
+          .social-icons {
+            fill: $secondary-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Small Screens*/
+@media (min-width: 768px) and (max-width: 991px) {
+  header {
+    min-height: 527px;
+    .item-container {
+      .item-data {
+        padding-top: 20px;
+        h3{
+          font-size: $main-font-size + 4;
+          margin-bottom: 25px;
+          width: 90%;
+        }
+        p.lead {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .services {
+    .heading {
+      h5 {
+        font-size: $main-font-size + 3;
+        line-height: 1.6;
+      }
+      .btn-outline-danger {
+        border-width: 2px;
+        font-size: $main-font-size - 2;
+      }
+    }
+    .nav-tabs {
+      justify-content: center;
+      margin-left: 10px;
+      margin-right: 10px;
+      border: 0;
+      .nav-item {
+        a {
+          padding-top: 20px;
+          padding-bottom: 5px;
+          font-size: 14px;
+          &.active {
+            font-size: 14px;
+          }
+          svg {
+            width: 60px;
+            height: 60px;
+            padding: 17px;
+            margin-bottom: 10px;
+          }
+          &.active svg {
+            width: 70px;
+            height: 70px;
+          }
+        }
+      }
+    }
+    .tab-content {
+      .individual-services {
+        .single-service {
+          p {
+            padding: 3px 15px;
+          }
+          .move {
+            a.serv-gain {
+              font-size: $main-font-size;
+              color: #a12226;
+              text-align: center;
+            }
+          }
+          &:hover {
+            border-color: #a12226;
+            h5{
+              color: #a12226;
+            }
+            .move {
+              background-color: #a12226;
+            }
+            .move .icons a svg .individual-services-icons {
+              fill: $secondary-color;
+            }
+            a.serv-gain {
+              color: $secondary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    .social-media {
+      a {
+        svg {
+          margin-right: 10px;
+          margin-left: 10px;
+          .social-icons {
+            fill: $secondary-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Medium Screens */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .item-container {
+    .item-data {
+      padding-top: 10px;
+      h3 {
+        font-size: $main-font-size + 10;
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  .services {
+    .tab-content {
+      .individual-services {
+        .single-service {
+          h5{
+            font-size: $main-font-size;
+          }
+          .move {
+            a.serv-gain {
+              font-size: $main-font-size - 5;
+              color: #a12226;
+              text-align: center;
+            }
+          }
+          &:hover {
+            border-color: #a12226;
+            h5{
+              color: #a12226;
+            }
+            .move {
+              background-color: #a12226;
+            }
+            .move .icons a svg .individual-services-icons {
+              fill: $secondary-color;
+            }
+            a.serv-gain {
+              color: $secondary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
