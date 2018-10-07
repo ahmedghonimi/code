@@ -239,12 +239,13 @@ body {
             font-size: $main-font-size - 2;
             padding: 8px 15px;
             color: #231f20;
-            line-height: 1.7
+            line-height: 1.6;
+            margin-bottom: 8px;
           }
           .move {
             background-color: #e7e7e7;
             display: flex;
-            height: 70px;
+            height: 50px;
             justify-content: center;
             align-items: center;
             padding: 8px 16px;
@@ -270,8 +271,7 @@ body {
               text-decoration: none;
               color: #a12226;
               &:hover {
-                text-decoration: none;
-                border-bottom: 1px solid #FFFFFF;
+                text-decoration: underline;
                 color: #FFFFFF;
               }
             }
@@ -407,7 +407,6 @@ footer {
 
   }
 
-
   .services {
     .heading {
       padding-bottom: 15px;
@@ -418,8 +417,9 @@ footer {
     }
     .nav-tabs {
       display: block;
-      margin-left: 20px;
-      margin-right: 20px;
+      width: 65%;
+      padding: 0;
+      margin: 0 auto;
       .nav-item {
         margin-bottom: 0;
         a {
@@ -464,6 +464,10 @@ footer {
     display: block;
     text-align: center;
     .important-links {
+      .list-unstyled {
+        padding: 0;
+        margin: 0 auto 15px auto;
+      }
       text-align: center;
       li {
         margin-left: 5px;
@@ -521,8 +525,9 @@ footer {
     }
     .nav-tabs {
       display: block;
-      margin-left: 20px;
-      margin-right: 20px;
+      width: 65%;
+      padding: 0;
+      margin: 0 auto;
       .nav-item {
         margin-bottom: 0;
         a {
@@ -567,6 +572,10 @@ footer {
     display: block;
     text-align: center;
     .important-links {
+      .list-unstyled {
+        padding: 0;
+        margin: 0 auto 15px auto;
+      }
       text-align: center;
       li {
         margin-left: 5px;
@@ -684,6 +693,10 @@ footer {
   }
 
   footer {
+    .list-unstyled {
+      padding: 0;
+      margin: 0 auto 15px auto;
+    }
     .social-media {
       a {
         svg {
@@ -700,12 +713,14 @@ footer {
 
 /* Medium Screens */
 @media (min-width: 992px) and (max-width: 1199px) {
-  .item-container {
-    .item-data {
-      padding-top: 10px;
-      h3 {
-        font-size: $main-font-size + 10;
-        margin-bottom: 15px;
+  header {
+    .item-container {
+      .item-data {
+        padding-top: 10px;
+        h3 {
+          font-size: $main-font-size + 10;
+          margin-bottom: 15px;
+        }
       }
     }
   }
